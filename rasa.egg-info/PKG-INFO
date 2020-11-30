@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: rasa
+Version: 1.1.4
+Summary: Open source machine learning framework to automate text- and voice-based conversations: NLU, dialogue management, connect to Slack, Facebook, and more - Create chatbots and voice assistants
+Home-page: https://rasa.com
+Author: Rasa Technologies GmbH
+Author-email: hi@rasa.com
+Maintainer: Tom Bocklisch
+Maintainer-email: tom@rasa.com
+License: Apache 2.0
+Download-URL: https://github.com/RasaHQ/rasa/archive/1.1.4.tar.gz
+Project-URL: Bug Reports, https://github.com/rasahq/rasa/issues
+Project-URL: Source, https://github.com/rasahq/rasa
+Description: # Rasa 1.0
+        
+        Please find the installation instructions in the root folder of this project.
+        
+Keywords: nlp machine-learning machine-learning-library bot bots botkit rasa conversational-agents conversational-ai chatbotchatbot-framework bot-framework
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development :: Libraries
+Description-Content-Type: text/markdown
+Provides-Extra: test
+Provides-Extra: spacy
+Provides-Extra: mitie
+Provides-Extra: sql

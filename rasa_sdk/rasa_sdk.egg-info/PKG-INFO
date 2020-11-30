@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: rasa-sdk
+Version: 1.1.0
+Summary: Machine learning based dialogue engine for conversational software.
+Home-page: https://saarthi.com
+Author: Saarthi
+Author-email: hi@saarthi.com
+Maintainer: Snehasish Mishra
+Maintainer-email: snehasish@saarthi.com
+License: Free
+Project-URL: Bug Reports, https://saarthi.com
+Project-URL: Documentation, https://saarthi.com
+Project-URL: Source, https://saarthi.com
+Description: Long Description
+Keywords: nlp machine-learning machine-learning-library bot bots botkit rasa conversational-agents conversational-ai chatbotchatbot-framework bot-framework
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Software Development :: Libraries
+Description-Content-Type: text/markdown
+Provides-Extra: test
