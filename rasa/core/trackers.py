@@ -438,7 +438,7 @@ class DialogueStateTracker(object):
 
         Returns the dumped tracker as a string."""
         from rasa.core.training.structures import Story
-
+        # print(self.sender_id)
         story = Story.from_events(self.applied_events(), self.sender_id)
         return story.as_story_string(flat=True, e2e=e2e)
 

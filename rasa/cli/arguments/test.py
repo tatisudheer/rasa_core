@@ -64,6 +64,11 @@ def add_test_core_argument_group(
         "tests, e.g. on travis.",
     )
     parser.add_argument(
+        "--NLUHttpInterpreter",
+        action="store_true",
+        help="This flag is for enabling Rasa NLU Http interpreter",
+    )
+    parser.add_argument(
         "--url",
         type=str,
         help="If supplied, downloads a story file from a URL and "

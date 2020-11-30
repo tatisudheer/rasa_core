@@ -572,14 +572,15 @@ def _slot_history(tracker_dump: Dict[Text, Any]) -> List[Text]:
 async def _write_data_to_file(sender_id: Text, endpoint: EndpointConfig):
     """Write stories and nlu data to file."""
 
-    story_path, nlu_path, domain_path = _request_export_info()
+    # story_path, nlu_path, domain_path = _request_export_info()
+    story_path = _request_export_info()
 
     tracker = await retrieve_tracker(endpoint, sender_id)
     events = tracker.get("events", [])
 
     await _write_stories_to_file(story_path, events)
-    await _write_nlu_to_file(nlu_path, events)
-    await _write_domain_to_file(domain_path, events, endpoint)
+    # await _write_nlu_to_file(nlu_path, events)
+    # await _write_domain_to_file(domain_path, events, endpoint)
 
     logger.info("Successfully wrote stories and NLU data")
 
@@ -678,23 +679,24 @@ def _request_export_info() -> Tuple[Text, Text, Text]:
             "will append the stories)",
             default=PATHS["stories"],
         ),
-        export_nlu=questionary.text(
-            message="Export NLU data to (if file exists, this will "
-            "merge learned data with previous training examples)",
-            default=PATHS["nlu"],
-        ),
-        export_domain=questionary.text(
-            message="Export domain file to (if file exists, this "
-            "will be overwritten)",
-            default=PATHS["domain"],
-        ),
+        # export_nlu=questionary.text(
+        #     message="Export NLU data to (if file exists, this will "
+        #     "merge learned data with previous training examples)",
+        #     default=PATHS["nlu"],
+        # ),
+        # export_domain=questionary.text(
+        #     message="Export domain file to (if file exists, this "
+        #     "will be overwritten)",
+        #     default=PATHS["domain"],
+        # ),
     )
 
     answers = questions.ask()
     if not answers:
         raise Abort()
 
-    return (answers["export_stories"], answers["export_nlu"], answers["export_domain"])
+    # return (answers["export_stories"], answers["export_nlu"], answers["export_domain"])
+    return(answers["export_stories"])
 
 
 def _split_conversation_at_restarts(
@@ -771,6 +773,7 @@ async def _write_stories_to_file(
     create_path(export_story_path)
 
     if os.path.exists(export_story_path):
+        print("path exists...")
         append_write = "a"  # append if already exists
     else:
         append_write = "w"  # make a new file if not

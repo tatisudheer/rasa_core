@@ -126,6 +126,7 @@ class TrackerStore(object):
     def deserialise_tracker(self, sender_id, request_id, user_id, _json) -> Optional[DialogueStateTracker]:
         dialogue = pickle.loads(_json)
         tracker = self.init_tracker(sender_id, request_id, user_id)
+        # print(tracker)
         if tracker:
             tracker.recreate_from_dialogue(dialogue)
             return tracker

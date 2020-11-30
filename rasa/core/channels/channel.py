@@ -90,12 +90,16 @@ def register(
 def button_to_string(button, idx=0):
     """Create a string representation of a button."""
 
-    title = button.pop("title", "")
+    title = ""
+    payload = ""
+    details = ""
+    # print(button)
+    if 'title' in button:
+        title = button['title']
 
     if "payload" in button:
-        payload = " ({})".format(button.pop("payload"))
-    else:
-        payload = ""
+        payload = " ({})".format(button["payload"])
+
 
     # if there are any additional attributes, we append them to the output
     if button:
@@ -112,8 +116,11 @@ def button_to_string(button, idx=0):
 
 def element_to_string(element, idx=0):
     """Create a string representation of an element."""
-
-    title = element.pop("title", "")
+    title = None
+    try:
+        title = element.pop("title")
+    except:
+        title = ""
 
     element_string = "{idx}: {title} - {element}".format(
         idx=idx + 1, title=title, element=json.dumps(element, sort_keys=True)

@@ -83,10 +83,11 @@ def test_core(
         )
 
     use_e2e = kwargs["e2e"] if "e2e" in kwargs else False
+    use_nlu_http_interpreter = kwargs["NLUHttpInterpreter"] if "NLUHttpInterpreter" in kwargs else False
 
     _interpreter = RegexInterpreter()
     if use_e2e:
-        if os.path.exists(nlu_path):
+        if os.path.exists(nlu_path) or use_nlu_http_interpreter:
             _interpreter = NaturalLanguageInterpreter.create(nlu_path, _endpoints.nlu)
         else:
             print_warning(
